@@ -1,3 +1,35 @@
+<?php
+   include("config.php");
+   session_start();
+
+   if($_SERVER["REQUEST_METHOD"] == "POST") {
+      // username and password sent from form
+
+      $myemail = mysqli_real_escape_string($db,$_POST['email']);
+      $mypassword = mysqli_real_escape_string($db,$_POST['pwd']);
+
+      $sql = "SELECT id FROM users WHERE email = '$myemail' and pwd = '$mypassword'";
+      $result = mysqli_query($db,$sql) or die(mysqli_error($db));
+      $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+      $count = mysqli_num_rows($result);
+
+      // If result matched $myusername and $mypassword, table row must be 1 row
+
+      if($count == 1) {
+         $_SESSION['login_user'] = $myemail;
+
+         header("location: welcome.php");
+      }else {
+         $error = "Your Login Name or Password is invalid";
+      }
+   }
+?>
+
+
+
+
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -76,7 +108,7 @@
 
     <header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(images/img_bg_1.jpg);">
         <div class="container">
-            <form action="/action_page.php">
+            <form action="" method="post">
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
@@ -119,4 +151,3 @@
 
 </body>
 </html>
-
