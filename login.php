@@ -18,6 +18,9 @@
 
       if($count == 1) {
          $_SESSION['login_user'] = $myemail;
+         $_SESSION['email'] = $myemail;
+
+
 
          header("location: welcome.php");
       }else {
