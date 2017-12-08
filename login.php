@@ -5,7 +5,7 @@
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form
 
-      $myemail = mysqli_real_escape_string($db,$_POST['email']);
+      $myemail    = mysqli_real_escape_string($db,$_POST['email']);
       $mypassword = mysqli_real_escape_string($db,$_POST['pwd']);
 
       $sql = "SELECT id FROM users WHERE email = '$myemail' and pwd = '$mypassword'";
@@ -18,7 +18,7 @@
 
       if($count == 1) {
          $_SESSION['login_user'] = $myemail;
-         $_SESSION['email'] = $myemail;
+         $_SESSION['email']      = $myemail;
 
 
 
