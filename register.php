@@ -10,7 +10,7 @@ $name       = $_POST['name'];
 
 
 $sql = "INSERT INTO users (email, pwd, username, name)
-        VALUES ($email, $password, $username, $name)";
+        VALUES ('$email','$password','$username','$name')";
 
 if ($db->query($sql) === TRUE) {
     echo "New record created successfully";
