@@ -1,32 +1,4 @@
 <?php
-   include("config.php");
-   session_start();
-
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
-      // username and password sent from form
-
-      $myemail = mysqli_real_escape_string($db,$_POST['email']);
-      $mypassword = mysqli_real_escape_string($db,$_POST['pwd']);
-
-      $sql = "SELECT id FROM users WHERE email = '$myemail' and pwd = '$mypassword'";
-      $result = mysqli_query($db,$sql) or die(mysqli_error($db));
-      $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
-      $count = mysqli_num_rows($result);
-
-      // If result matched $myusername and $mypassword, table row must be 1 row
-
-      if($count == 1) {
-         $_SESSION['login_user'] = $myemail;
-         $_SESSION['email'] = $myemail;
-
-
-
-         header("location: welcome.php");
-      }else {
-         $error = "Your Login Name or Password is invalid";
-      }
-   }
 ?>
 
 
@@ -125,7 +97,6 @@
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
-            <p><a href="create.php" class="btn btn-default">Create your account now!</a></p>
 
         </div>
     </header>
