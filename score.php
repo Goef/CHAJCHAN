@@ -78,7 +78,10 @@
     </nav>
 
     <header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(images/img_bg_1.jpg);">
+      <a href="#"> <img src="images\arrowback.png" onclick="history.go(-1)" height="25" width="25"</a>
+
         <div class="gtco-container">
+
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center">
                     <div class="display-t">

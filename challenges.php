@@ -49,7 +49,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/handshake.css">
 
-    <script src="js/highfive.js"></script>
 
     <!-- Modernizr JS -->
     <script src="js/modernizr-2.6.2.min.js"></script>
@@ -57,9 +56,8 @@
     <!--[if lt IE 9]>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-    <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.13.0/dojo/dojo.js"></script>
     <script src="js/modernizr-2.6.2.min.js"></script>
-    <script src="js/require.js"></script>
+
 
 
 
@@ -87,8 +85,15 @@
         </div>
     </nav>
 -->
-    <header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(images/img_bg_1.jpg);">
+    <header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(images/img_bg_1.jpg);" style="no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;">
+      <img src="images\arrowback.png" onclick="history.go(-1)" height="25" width="25">
+
         <div class="gtco-container">
+
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center">
                     <div class="display-t">
@@ -109,8 +114,8 @@
                               </div>
                               <h1>Weekly Challenge <span class="badge badge-secondary"></span></h2>
                               <h2>Geef 5 high five's !<span class="badge badge-secondary"></span></h3>
-                              <div class="section cursor-pointer centered" style="width:400px; height:400px;">
-                              <svg id="high-five" style="width:400px; height:400px;"></svg>
+                              <img src="images/highfive.gif" alt="highfive"height="180" width="220">
+
                               </div>
 
                         </div>

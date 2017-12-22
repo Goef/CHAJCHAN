@@ -2,30 +2,36 @@
    include("config.php");
    session_start();
 
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
+   if(isset($_POST['submit'])) {
       // username and password sent from form
 
       $myemail    = mysqli_real_escape_string($db,$_POST['email']);
       $mypassword = mysqli_real_escape_string($db,$_POST['pwd']);
 
-      $sql = "SELECT id FROM users WHERE email = '$myemail' and pwd = '$mypassword'";
-      $result = mysqli_query($db,$sql) or die(mysqli_error($db));
-      $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+      $sql = "SELECT id, name, username FROM users WHERE email = '$myemail' and pwd = '$mypassword'";
+      $result = mysqli_query($db,$sql);
+      // $row = mysqli_fetch_assoc($result);
 
-      $count = mysqli_num_rows($result);
+      // $count = mysqli_num_rows($result);
 
       // If result matched $myusername and $mypassword, table row must be 1 row
 
-      if($count == 1) {
-         $_SESSION['login_user'] = $myemail;
-         $_SESSION['email']      = $myemail;
-
-
-
-         header("location: welcome.php");
-      }else {
-         $error = "Your Login Name or Password is invalid";
+      if(!$row = mysqli_fetch_assoc($result)) {
+        $error = "Je bent een homo";
+      } else {
+        $_SESSION['id'] = $row['id'];
+        $_SESSION['name'] = $row['name'];
+        $_SESSION['login_user'] = $row['username'];
+        $_SESSION['email']      = $row['email'];
+        header("location: welcome.php");
       }
+
+
+
+         // header("location: welcome.php");
+      // }else {
+      //    $error = "Your Login Name or Password is invalid";
+      // }
    }
 ?>
 
@@ -110,7 +116,10 @@
     <!--</nav>-->
 
     <header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(images/img_bg_1.jpg);">
+      <a href="#"> <img src="images\arrowback.png" onclick="history.go(-1)" height="25" width="25"</a>
+
         <div class="container">
+
             <form action="" method="post">
                 <div class="form-group">
                     <label for="email">Email:</label>
@@ -123,7 +132,7 @@
                 <div class="checkbox">
                     <label><input type="checkbox" name="remember"> Remember me</label>
                 </div>
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button name="submit" type="submit" class="btn btn-default">Submit</button>
             </form>
             <p><a href="create.php" class="btn btn-default">Create your account now!</a></p>
 
