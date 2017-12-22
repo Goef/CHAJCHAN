@@ -47,6 +47,9 @@
 
     <!-- Theme style  -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/handshake.css">
+
+    <script src="js/highfive.js"></script>
 
     <!-- Modernizr JS -->
     <script src="js/modernizr-2.6.2.min.js"></script>
@@ -54,6 +57,11 @@
     <!--[if lt IE 9]>
     <script src="js/respond.min.js"></script>
     <![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.13.0/dojo/dojo.js"></script>
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="js/require.js"></script>
+
+
 
     </head>
     <body>
@@ -85,11 +93,25 @@
                 <div class="col-md-8 col-md-offset-2 text-center">
                     <div class="display-t">
                         <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                            <h1>Welcome <?php echo ($Myemail) ?></h1>
-                            <p><a href="challenges.php" class="btn btn-default">challenges</a></p>
-                            <p><a href="leaderboards.php" class="btn btn-default">leaderboards</a></p>
-                            <p><a href="profile.php" class="btn btn-default">Profile</a></p>
-                            <p><a href="friends.php" class="btn btn-default">Friends</a></p>
+                            <h1>Daily Challenge <span class="badge badge-secondary"></span></h2>
+                            <h2>Handen schudden voor 10 seconden<span class="badge badge-secondary"></span></h3>
+
+
+                                <div id="opty_hands" class="valign">
+                                <div id="left-arm">
+                                  <div class="left-hand"><span>...</span></div>
+                                  <div class="left-shake"><span>_<br>_<br>_</span></div>
+                                </div>
+                                <div id="right-arm">
+                                  <div class="right-hand"><span>...</span></div>
+                                  <div class="right-shake"></div>
+                                </div>
+                              </div>
+                              <h1>Weekly Challenge <span class="badge badge-secondary"></span></h2>
+                              <h2>Geef 5 high five's !<span class="badge badge-secondary"></span></h3>
+                              <div class="section cursor-pointer centered" style="width:400px; height:400px;">
+                              <svg id="high-five" style="width:400px; height:400px;"></svg>
+                              </div>
 
                         </div>
                     </div>
