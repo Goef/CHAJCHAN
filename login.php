@@ -129,10 +129,8 @@
                     <label for="pwd">Password:</label>
                     <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
                 </div>
-                <div class="checkbox">
-                    <label><input type="checkbox" name="remember"> Remember me</label>
-                </div>
-                <button name="submit" type="submit" class="btn btn-default">Submit</button>
+            
+                <button name="submit" type="submit" class="btn btn-default" autocomplete="on">Submit</button>
             </form>
             <p><a href="create.php" class="btn btn-default">Create your account now!</a></p>
 
