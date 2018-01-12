@@ -93,7 +93,7 @@
                     <div class="display-t">
                         <div class="display-tc animate-box" data-animate-effect="fadeIn">
                             <h1><?php echo ($name) ?></h1>
-                        <img height="150" width="150" src="http://api.adorable.io/avatar/{<?php echo $name?>}">
+                        <img height="150" width="150" src="http://api.adorable.io/avatar/<?= $user_check ?>">
                         <h2>Score : <?= $score ?> </h2>
                         </div>
                     </div>

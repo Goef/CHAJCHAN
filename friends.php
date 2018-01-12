@@ -1,5 +1,14 @@
+
 <?php
    include('session.php');
+   $sql= "SELECT username FROM users";
+
+   $result = mysqli_query($db,$sql);
+   $namedb = mysqli_fetch_assoc($result);
+   $name;
+   while($row = mysqli_fetch_assoc($result)){
+     $namedb = $row['username'];
+   };
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -79,23 +88,21 @@
         </div>
     </nav>
 -->
-    <header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(images/img_bg_1.jpg);">
+    <header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(images/img_bg_1.jpg); background: cover;">
       <a href="#"> <img src="images\arrowback.png" onclick="history.go(-1)" height="25" width="25"</a>
-
         <div class="gtco-container">
-
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center">
                     <div class="display-t">
                         <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                            <h1>Welcome <?php echo ($Myemail) ?></h1>
-                            <p><a href="challenges.php" class="btn btn-default">challenges</a></p>
-                            <p><a href="leaderboards.php" class="btn btn-default">leaderboards</a></p>
-                            <p><a href="profile.php" class="btn btn-default">Profile</a></p>
-                            <p><a href="friends.php" class="btn btn-default">Friends</a></p>
-                            <p><a href="logout.php" class="btn btn-default">Log Out</a></p>
 
-
+                        <h1><?php echo "Friends" ?></h1>
+                        <img height="150" width="150" src="http://api.adorable.io/avatar/<?php echo $namedb?>">
+                        <h2>
+                          <?php
+                          print_r($namedb);
+                          ?>
+                        </h2>
                         </div>
                     </div>
                 </div>

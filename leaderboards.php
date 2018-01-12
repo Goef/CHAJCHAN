@@ -1,10 +1,15 @@
 
-<?php
+ <?php
    include('session.php');
-   $sql= "SELECT score FROM score ";
+   $sql= "SELECT username FROM users";
    $result = mysqli_query($db,$sql);
-   $dbscore = mysqli_fetch_assoc($result);
-   $score = $dbscore['score'];
+   // $dbscore = mysqli_fetch_assoc($result);
+   $username;
+   while($row = mysqli_fetch_assoc($result)){
+     $username[] = $row['username'];
+   };
+
+
 
 ?>
 <!DOCTYPE HTML>
@@ -35,96 +40,89 @@
     <meta name="twitter:url" content="" />
     <meta name="twitter:card" content="" />
 
-    <!-- <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'> -->
+     <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'> -->
 
     <!-- Animate.css -->
-    <link rel="stylesheet" href="css/animate.css">
+     <link rel="stylesheet" href="css/animate.css">
     <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="css/icomoon.css">
+     <link rel="stylesheet" href="css/icomoon.css">
     <!-- Bootstrap  -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
 
     <!-- Magnific Popup -->
-    <link rel="stylesheet" href="css/magnific-popup.css">
+   <link rel="stylesheet" href="css/magnific-popup.css">
 
     <!-- Owl Carousel  -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
+   <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
 
-    <!-- Theme style  -->
+    <!-- Theme style -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Modernizr JS -->
-    <script src="js/modernizr-2.6.2.min.js"></script>
-    <!-- FOR IE9 below -->
-    <!--[if lt IE 9]>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
+
+     <!--Modernizr JS -->
+  <script src="js/modernizr-2.6.2.min.js"></script>
+
 
     </head>
     <body>
 
     <div class="gtco-loader"></div>
 
-    <!--<div id="page">
-  <nav class="gtco-nav" role="navigation">
-        <div class="gtco-container">
-            <div class="row">
 
-              <div class="col-xs-2 text-right hidden-xs menu-2">
-                  <ul>
-                      <li class="btn-cta" ><a href="challenges.php"><span>challenges</span></a></li>
-                      <li class="btn-cta" ><a href="leaderboards.php"><span>leaderboards</span></a></li>
-                      <li class="btn-cta" ><a href="profile.php"><span>Profile</span></a></li>
-                      <li class="btn-cta" ><a href="friends.php"><span>Friends</span></a></li>
+</html>
+<header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(images/img_bg_1.jpg); background: cover;">
+  <a href="#"> <img src="images\arrowback.png" onclick="history.go(-1)" height="25" width="25"</a>
+    <div class="gtco-container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <div class="display-t">
+                    <div class="display-tc animate-box" data-animate-effect="fadeIn">
 
-                    </ul>
-                </div>
-            </div>
+                    <h1>leaderboards</h1>
+                    <div style="text-align:center !important">
+                    <h2 style="text-align:center;">
+                      <?php
+                      foreach ($username as $value) {
 
-        </div>
-    </nav>
--->
-    <header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(images/img_bg_1.jpg); background: cover;">
-      <a href="#"> <img src="images\arrowback.png" onclick="history.go(-1)" height="25" width="25"</a>
-        <div class="gtco-container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center">
-                    <div class="display-t">
-                        <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                          
-
-                        <h2>Score : <?= $score ?> </h2>
-                        </div>
+                        ?>
+                        <img height="150" width="150" src="http://api.adorable.io/avatar/<?php echo $value?>">
+                          <br>
+                        <?php
+                        echo "$value <br><br>\n";
+                      }
+                      ?>
+                    </h2>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
-
     </div>
+</header>
 
-    <div class="gototop js-top">
-        <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-    </div>
+</div>
 
-    <!-- jQuery -->
-    <script src="js/jquery.min.js"></script>
-    <!-- jQuery Easing -->
-    <script src="js/jquery.easing.1.3.js"></script>
-    <!-- Bootstrap -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Waypoints -->
-    <script src="js/jquery.waypoints.min.js"></script>
-    <!-- Carousel -->
-    <script src="js/owl.carousel.min.js"></script>
-    <!-- countTo -->
-    <script src="js/jquery.countTo.js"></script>
-    <!-- Magnific Popup -->
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/magnific-popup-options.js"></script>
-    <!-- Main -->
-    <script src="js/main.js"></script>
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+</div>
 
-    </body>
+<!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="js/jquery.waypoints.min.js"></script>
+<!-- Carousel -->
+<script src="js/owl.carousel.min.js"></script>
+<!-- countTo -->
+<script src="js/jquery.countTo.js"></script>
+<!-- Magnific Popup -->
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/magnific-popup-options.js"></script>
+<!-- Main -->
+<script src="js/main.js"></script>
+
+</body>
 </html>
