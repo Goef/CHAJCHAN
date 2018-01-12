@@ -1,7 +1,8 @@
 
 <?php
    include('session.php');
-   $sql= "SELECT score FROM score INNER JOiN users ON score.user_id = users.id";
+  $sql= "SELECT score FROM score WHERE user_id= '$id'";
+
    $result = mysqli_query($db,$sql);
    $dbscore = mysqli_fetch_assoc($result);
    $score = $dbscore['score'];
