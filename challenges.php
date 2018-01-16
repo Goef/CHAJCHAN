@@ -102,7 +102,7 @@
                             <h2>Handen schudden voor 10 seconden<span class="badge badge-secondary"></span></h3>
 
 
-                                <div id="opty_hands" class="valign">
+                                <div style="align-text:center; !important" id="opty_hands" class="valign">
                                 <div id="left-arm">
                                   <div class="left-hand"><span>...</span></div>
                                   <div class="left-shake"><span>_<br>_<br>_</span></div>
@@ -112,20 +112,43 @@
                                   <div class="right-shake"></div>
                                 </div>
                               </div>
-                              <h1>Weekly Challenge <span class="badge badge-secondary"></span></h2>
-                              <h2>Geef 5 high five's !<span class="badge badge-secondary"></span></h3>
-                              <img src="images/highfive.gif" alt="highfive"height="180" width="220">
-
                               </div>
 
                         </div>
                     </div>
                 </div>
             </div>
+
+
+            <div id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(images/img_bg_1.jpg);" style="no-repeat center center fixed;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;">
+
+            <div class="gtco-container">
+
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <div class="display-t">
+                            <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                                <h1>Weekly Challange <span class="badge badge-secondary"></span></h2>
+                                <h2>Geef 5 High Fives<span class="badge badge-secondary"></span></h3>
+
+                                  <img src="images/highfive.gif" alt="highfive"height="180" width="220">
+
+
+
+                                  </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
         </div>
     </header>
 
-    </div>
 
     <div class="gototop js-top">
         <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
